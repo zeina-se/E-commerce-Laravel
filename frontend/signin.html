@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form1">
+     <h2>Great to have you back!</h2>   
+     <div id="error_msg" class="error"></div>
+
+    <label for="username">Username or email</label>
+    <input type="text" id="username" name="username" placeholder="Your username.." required>
+
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password" placeholder="Your password.." required>
+
+    <button id="signin_btn" type="button">Sign In</button>
+    Not a member? <a class="link" href="signup.html">Create an account</a>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        pages.loadFor("signin")
+    </script>      
+</body>
+</html>
