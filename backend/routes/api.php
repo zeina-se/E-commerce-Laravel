@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\cartController;
 
 
 Route::controller(AuthController::class)->group(function () {
@@ -15,13 +16,13 @@ Route::controller(AuthController::class)->group(function () {
 
 });
 
-Route::controller(TodoController::class)->group(function () {
-    Route::get('todos', 'index');
-    Route::post('todo', 'store');
-    Route::get('todo/{id}', 'show');
-    Route::put('todo/{id}', 'update');
-    Route::delete('todo/{id}', 'destroy');
-}); 
+// Route::controller(TodoController::class)->group(function () {
+//     Route::get('todos', 'index');
+//     Route::post('todo', 'store');
+//     Route::get('todo/{id}', 'show');
+//     Route::put('todo/{id}', 'update');
+//     Route::delete('todo/{id}', 'destroy');
+// }); 
 
 Route::controller(productController::class)->group(function () {
     Route::post('/test', "test");
@@ -31,6 +32,14 @@ Route::controller(productController::class)->group(function () {
     Route::get('/product_category/{id}', "getProductbyCategory");
     Route::get('/delete_product/{id}',"deleteProduct");
     Route::post('/add_update_product/{id?}', "addOrUpdateProduct");
+
+   
+}); 
+
+Route::controller(cartController::class)->group(function () {
+   
+     Route::get('/show_cart/{id}', "getCartbyUser");
+     Route::post('/add_to_cart/{id?}', "addToCart");
 
    
 }); 
